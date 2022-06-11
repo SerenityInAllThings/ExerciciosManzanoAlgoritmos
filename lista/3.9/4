@@ -1,0 +1,15 @@
+a(X);
+b(X); // Mas no material é inválido
+c();
+d();
+e();
+f(X);
+g(X);
+h(X); // Mas no material é inválido
+i();
+j();
+k();
+l(X);
+m();
+n(X); // Mas em JS é inválido
+o(X);
