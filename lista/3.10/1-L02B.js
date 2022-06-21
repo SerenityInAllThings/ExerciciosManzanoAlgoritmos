@@ -12,7 +12,7 @@ const reajustarSalario = (SM, PR) => {
         console.log(error)
     }
 }
-reajustarSalario(1000, 15)
+reajustarSalario(1000, -15)
 reajustarSalario(1000, 'a')
 reajustarSalario('b', 15)
 reajustarSalario(-1000, 15)
