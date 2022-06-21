@@ -10,3 +10,48 @@ i - lógico;
 j - literal;
 k - literal;
 l - real;
+
+
+const person = {
+    firstName: ["John","Bolsonaro","Lula"],
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+  };
+
+  person.firstName[2]
+
+  const a = [
+    {firstname: 'pet', lastname: 'gama'},
+    {firstname: 'pet', lastname: 'gama'},
+    {firstname: 'pet', lastname: 'gama'},
+    {firstname: 'pet', lastname: 'gama'},
+    {firstname: 'pet', lastname: 'gama'},
+    {firstname: 'pet', lastname: 'gama'},
+    {firstname: 'pet', lastname: 'gama'},
+    {firstname: 'pet', lastname: 'gama'},
+  ]
+
+  a[2].lastname
+
+
+
+
+
+  const pessoa = {
+    nome: 'pet',
+    sobrenome: 'gama'
+  }
+  
+  pessoa.nome //pet
+  pessoa.sobrenome //gama
+  
+  pessoa['nome'] // pet
+  pessoa['sobrenome'] // gama
+  
+  let propAtual = 'nome'
+  pessoa[propAtual] //pet
+  propAtual = 'sobrenome'
+  pessoa[propAtual] //gama
+
+  
