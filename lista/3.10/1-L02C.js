@@ -4,36 +4,44 @@ const isPositiveInteger = (votos) =>{
 
 const contarVotos = (nulos, candidatoA, candidatoB, candidatoC, brancos) => {
     try {
-        const votos = [nulos,candidatoA,candidatoB,candidatoC,brancos] 
-        for (let i=0; i<votos.length; i++) {     //v1
-            const votosAtuais = votos[i]
-            if (!isPositiveInteger(votosAtuais))
-                throw 'error contacte o administrador do sistema FODASE'
-        
-            // if (votos.some(v => !isPositiveInteger(v))) //v2
-            //     throw 'aaa'        
-        }
+        if(
+            isNaN(nulos) || 
+            isNaN(candidatoA) || 
+            isNaN(candidatoB) || 
+            isNaN(candidatoC) || 
+            isNaN(brancos) ||
+            candidatoA < 0 || 
+            candidatoB < 0 || 
+            candidatoC < 0 ||
+            nulos < 0 ||
+            brancos < 0 ||
+            !Number.isInteger(candidatoA)||
+            !Number.isInteger(candidatoB)||
+            !Number.isInteger(candidatoC)||
+            !Number.isInteger(brancos)||
+            !Number.isInteger(nulos)
+            ) throw 'error contacte o administrador do sistema FODASE'
 
-        const TotalEleitores = nulos + candidatoA + candidatoB + candidatoC + brancos
-        console.log("Total de eleitores", TotalEleitores)
+        const TotalEleitores = nulos+candidatoA+candidatoB+candidatoC+brancos
+        console.log("Total de eleitores",TotalEleitores)
 
-        const percentValidVotes = (candidatoA + candidatoB + candidatoC) * 100 / TotalEleitores
-        console.log('Valor em percentural do total de votos em relação ao numero total de eleitores:', percentValidVotes, '%')
+        const percentValidVotes = (candidatoA+candidatoB+candidatoC)*100/TotalEleitores
+        console.log('Valor em percentural do total de votos em relação ao numero total de eleitores:',percentValidVotes,'%')
 
-        const percentValidA = candidatoA * 100 / TotalEleitores
-        console.log('O valor percentual de votos validos do candidato A em relação ao total de votos é de:', percentValidA, '%')
+        const percentValidA = candidatoA*100/TotalEleitores
+        console.log('O valor percentual de votos validos do candidato A em relação ao total de votos é de:',percentValidA,'%')
 
-        const percentValidB = candidatoB * 100 / TotalEleitores
-        console.log('O valor percentual de votos validos do candidato B em relação ao total de votos é de:', percentValidB, '%')
+        const percentValidB = candidatoB*100/TotalEleitores
+        console.log('O valor percentual de votos validos do candidato B em relação ao total de votos é de:',percentValidB,'%')
 
-        const percentValidC = candidatoC * 100 / TotalEleitores
-        console.log('O valor percentual de votos validos do candidato C em relação ao total de votos é de:', percentValidC, '%')
+        const percentValidC = candidatoC*100/TotalEleitores
+        console.log('O valor percentual de votos validos do candidato C em relação ao total de votos é de:',percentValidC,'%')
 
-        const percentNull = nulos * 100 / TotalEleitores
-        console.log('O valor percentual de votos nulos em relação ao total de votos é de:', percentNull, '%')
+        const percentNull = nulos*100/TotalEleitores
+        console.log('O valor percentual de votos nulos em relação ao total de votos é de:',percentNull,'%')
 
-        const percentWhite = brancos * 100 / TotalEleitores
-        console.log('O valor percentual de votos validos do candidato A em relação ao total de votos é de:', percentWhite, '%')
+        const percentWhite = brancos*100/TotalEleitores
+        console.log('O valor percentual de votos validos do candidato A em relação ao total de votos é de:',percentWhite,'%')
 
     } catch (error) {
         console.log(error)
