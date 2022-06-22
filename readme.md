@@ -6,8 +6,9 @@
 To run all entries, use: `npm run test` or `yarn test`
 
 To run a specific exercise, specify it as an argument 
-- `yarn test yarn test list/chapter_3/10/1/` will run exercise 1 of chapter 3.10
-- `yarn test yarn test list/chapter_4/` will run all chapter 4 exercises
+- `yarn test list/chapter_3/10/1/` will run exercise 1 of chapter 3.10.
+- `yarn test list/chapter_4/` will run all chapter 4 exercises entries.
+- `yarn test list/chapter_4/ peterson` will run all of Peterson's chapter 4 exercise entries.
 
 
 ## Contribution guidelines

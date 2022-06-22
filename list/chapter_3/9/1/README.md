@@ -1,1 +1,10 @@
-# Chapter 9 exercise 1
+# Exercise 1 from Chapter 3 - 9
+
+## Expected exports:
+
+- ex_a
+- ex_b
+- ex_c
+- ex_d
+- ex_e
+- ex_f
