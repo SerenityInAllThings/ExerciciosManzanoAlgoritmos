@@ -1,4 +1,4 @@
-const { isPositiveInteger, isNumber } = require('../../../utils/utils')
+const { isPositiveInteger, isNumber, isPositive, isInteger } = require('../../../utils/utils')
 
 const recuperarDiferencaAbsoluta = (primeiro, segundo) => {
   if (!isNumber(primeiro)) return NaN
@@ -13,9 +13,15 @@ const recuperarDiferencaAbsoluta = (primeiro, segundo) => {
   return maior - menor
 }
 
+const recuperarValorAbsoluto = (valor) => {
+  if (!isNumber(valor)) return NaN
+  if (!isInteger(valor)) throw new Error('Apenas números inteiros suportados')
+  return valor < 0 ? valor * -1 : valor
+}
+
 const nothing = () => {}
 module.exports.ex_a = recuperarDiferencaAbsoluta
-module.exports.ex_b = nothing
+module.exports.ex_b = recuperarValorAbsoluto
 module.exports.ex_c = nothing
 module.exports.ex_d = nothing
 module.exports.ex_e = nothing

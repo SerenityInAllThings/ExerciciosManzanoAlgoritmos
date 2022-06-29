@@ -1,6 +1,8 @@
 const { forEachStudent } = require("../../../utils/testUtils")
 
 const notNumericValues = [
+  [undefined],
+  [null],
   ['texto'], 
   ['c'], 
   [{}], 
@@ -64,12 +66,23 @@ forEachStudent(process.argv, __dirname, (entry, student) => {
         expect(entry.ex_b).toBeDefined();
       })
 
-      it("should run fine", () => {
-        entry.ex_b()
+      it.each([
+        [1, 1],
+        [0, 0],
+        [-1, 1],
+        [-15, 15],
+      ])("should transform %i into %i", (value, absoluteValue) => {
+        expect(entry.ex_b(value)).toBe(absoluteValue)
       })
 
       describe("error handling", () => {
-        entry.ex_b()
+        it.each(notNumericValues)('should return NaN when not numeric parameter is provided', (notNumeric) => {
+          expect(entry.ex_b(notNumeric)).toBeNaN()
+        })
+
+        it('should throw when floating number parameter is provided', () => {
+          expect(() => entry.ex_b(10.5)).toThrow()
+        })
       })
     })
   

@@ -60,4 +60,6 @@ exports.readPositiveNumber = readPositiveNumber;
 exports.readInt = readInt;
 exports.readPositiveInt = readPositiveInt;
 exports.isPositiveInteger = isPositiveInteger;
+exports.isPositive = isPositive;
 exports.isNumber = isNumber;
+exports.isInteger = isInteger;
