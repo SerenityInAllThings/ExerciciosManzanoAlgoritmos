@@ -50,9 +50,14 @@ const readPositiveInt = (message) => {
 };
 
 const isNumber = (value) => typeof value === "number" && isNaN(value) === false;
+const isInteger = (value) => isNumber(value) && Number.isInteger(value)
+const isPositive = (value) => value > 0
+const isPositiveInteger = (value) => isInteger(value) && isPositive(value)
 
 exports.runExercise = runExercise;
 exports.readNumber = readNumber;
 exports.readPositiveNumber = readPositiveNumber;
 exports.readInt = readInt;
 exports.readPositiveInt = readPositiveInt;
+exports.isPositiveInteger = isPositiveInteger;
+exports.isNumber = isNumber;
